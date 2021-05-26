@@ -22,4 +22,4 @@ Start you MSF listener on your attacker host. The msf.rc is a configuration file
 sudo msfconsole -r msf.rc
 ```
 
-Run the three test files from 1 to 3 by simply double clicking, and record the detection results.
+Run the three test files from 1 to 3 by simply double clicking, and record the detection results. It is recommended to right click and run at least one of the payload as Administrator to facilitate later testing for privesc.
