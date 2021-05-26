@@ -16,7 +16,7 @@ If all files are blocked you can either allow the downloads manaually in the sec
 
 ## Execution
 
-Start you MSF listener on your attacker host. The msf.rc is a configuration file for Metasploit, you can take the contents or download this file, make sure to update the SSL to the certificate you created in the initial setup phase and change the LHOST IP to the IP on you Kali machine.
+Start you MSF listener on your attacker host. The msf.rc is a configuration file for Metasploit, you can take the contents or download this [file](https://github.com/blumirabrian/endpoint-detection-methology/blob/main/msf/msf.rc), make sure to update the SSL to the certificate you created in the [initial setup phase](https://github.com/blumirabrian/endpoint-detection-methology/blob/main/msf/MSF-Setup.md#inital-setup-for-msf-testing) and change the LHOST IP to the IP on you Kali machine.
 
 ```
 sudo msfconsole -r msf.rc
