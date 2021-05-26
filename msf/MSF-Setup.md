@@ -46,6 +46,10 @@ The command shoudl complete and output 3 testing executables. For the high inter
 
 ![output payload 1](https://raw.githubusercontent.com/blumirabrian/endpoint-detection-methology/main/msf/edr2.png "Payload 1")
 
+Example of failed run for payload 3:
+
 ![output payload 3 error](https://raw.githubusercontent.com/blumirabrian/endpoint-detection-methology/main/msf/edr3.png "Payload 3 Error")
+
+Example of successful run for payload 3:
 
 ![output payload 3 success](https://raw.githubusercontent.com/blumirabrian/endpoint-detection-methology/main/msf/edr4.png "Payload 3 Success")
