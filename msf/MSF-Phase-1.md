@@ -65,7 +65,7 @@ whoami /groups
 net view /all
 ```
 
-##Local Privilege Escalation
+## Local Privilege Escalation
 
 The fourth group of tasks starts with becoming SYSTEM run the following in your meterpreter session:
 ```
