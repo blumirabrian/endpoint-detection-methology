@@ -13,3 +13,13 @@ You may also try different browsers as that can result in different checks and h
 
 If all files are blocked you can either allow the downloads manaually in the security stack or conclude the test.
 
+
+## Execution
+
+Start you MSF listener on your attacker host. The msf.rc is a configuration file for Metasploit, you can take the contents or download this file, make sure to update the SSL to the certificate you created in the initial setup phase and change the LHOST IP to the IP on you Kali machine.
+
+```
+sudo msfconsole -r msf.rc
+```
+
+Run the three test files from 1 to 3 by simply double clicking, and record the detection results.

