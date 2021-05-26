@@ -14,7 +14,7 @@ run
 Example output:
 
 ```
-*] Running module against 93.184.216.34
+[*] Running module against 93.184.216.34
 
 [*] 93.184.216.34:443 - Connecting to 93.184.216.34:443
 [*] 93.184.216.34:443 - Copying certificate from 93.184.216.34:443
@@ -32,7 +32,6 @@ Take the .pem file and use for setting the SSL cert in the msf.rc file.
 Change:
 ```
 set HANDLERSSLCERT /root/attack.crt
-
 ```
 
 To your new cert you collected:
