@@ -27,6 +27,8 @@ Example output:
 
 ```
 
+[https://github.com/blumirabrian/endpoint-detection-methology/blob/main/msf/edr1.png]
+
 Take the .pem file and use for setting the SSL cert in the msf.rc file.
 
 Change:
